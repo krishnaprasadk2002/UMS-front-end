@@ -1,0 +1,23 @@
+<div class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="w-2/5 mx-4 mt-16 bg-white shadow-xl rounded-lg text-gray-900 border border-gray-300 p-6">
+      <div class="mx-auto w-32 h-32 relative -mt-16 border-4 border-white rounded-full overflow-hidden">
+        <img class="object-cover object-center h-32" [src]="user.image ? 'http://localhost:3000/uploads/' + user.image : 'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto/gigs/113825996/original/979d276c37416c28272cc0ca1a303f5617ebe367/manifesting-your-imagination-in-cartoon-form-for-social-media-profile-photos.jpg'" alt='User image'>
+      </div>
+
+      <div class="text-center mt-6">
+        <h2 class="font-semibold text-xl"><b>Name:</b> {{user.name}}</h2>
+        <p class="font-semibold text-xl"><b>Email:</b> {{user.email}}</p>
+        <p class="font-semibold text-xl"><b>Mobile:</b> {{user.number}}</p>
+      </div>
+      <button type="button" (click)="onEdit()" class="mt-4 justify-center text-white bg-gray-800 border border-gray-800 focus:outline-none hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 mx-auto">Edit</button>
+    
+      
+      <div class="mt-6">
+        <label class="block mb-2 text-sm font-medium text-gray-900" for="file_input">Upload file</label>
+        <input  class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"  type="file" name="image" (change)="onFileSelected($event)"><br>
+        <button (click)="uploadImage()" class="mt-4 justify-center text-white bg-gray-800 border border-gray-800 focus:outline-none hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 mx-auto" >Save Image</button>
+      </div>
+      </div>
+     
+  </div>
+  
